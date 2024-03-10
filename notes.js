@@ -604,6 +604,7 @@
 
 // obj2.x();
 
+
 // 9. This - inside dom
 
 // this inside dom elements => reference to html elements 
