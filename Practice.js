@@ -200,23 +200,144 @@
 // Example: CORS (Cross-Origin Resource Sharing) can be handled using middleware 
 // like cors. For example, enabling CORS in an Express.js application:
 
-const express = require('express');
-const cors = require('cors');
-const app = express();
+// const express = require('express');
+// const cors = require('cors');
+// const app = express();
 
 
-app.use(cors());
+// app.use(cors());
 
-app.get('api/data', (req, res) =>{
-  res.json({message: 'Data from server'});
-});
-
-
-app.listen(3000, () =>{
-  console.log('Server is running on http://localhost:3000');
-});
+// app.get('api/data', (req, res) =>{
+//   res.json({message: 'Data from server'});
+// });
 
 
+// app.listen(3000, () =>{
+//   console.log('Server is running on http://localhost:3000');
+// });
 
+
+//How can you handle environment variables in Node.js?
+
+// A: Environment variables in Node.js can be accessed using the process.env object
+
+// console.log(process.env.NODE_ENV);
+
+
+// What is the purpose of the "fs" module in Node.js?
+
+// A: The "fs" module in Node.js provides file system-related functionality. For example, reading a file:
+
+// const fs = require('fs');
+
+// fs.readFile('example.txt', 'utf8', (req, res)=>{
+//   if(err){
+//     throw err;
+//   }
+//   console.log(data);
+// })
+
+
+// How can you perform unit testing in Node.js?
+
+// A:  Unit testing in Node.js can be performed using testing frameworks like Mocha and assertion libraries like Chai.
+// For example, writing a simple test case using Mocha and Chai:
+
+// const assert =  require('chai').assert;
+// const add = require('./add');
+
+// describe('add', ()=>{
+//   it('should return the sum of two number', ()=>{
+//     assert.equal(add(2, 3), 5);
+//   });
+// });
+
+//How can you perform database operations in Node.js?
+
+// const mysql = require('mysql');
+
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'username',
+//     password: 'password',
+//     database: 'database_name'
+// })
+
+// connection.connect((err)=>{
+//   if(err){
+//     console.error('Error connecting to mysql database', err.stack);
+//     return;
+//   }
+//   console.log('Connected to mysql database as ID', connection.threadId);
+// })
+
+// connection.query('select * from employee', (err, rows) =>{
+//   if(err){
+//     console.error('Error executing query:', err);
+//     return;
+//   }
+
+//   console.log('Data reterived from MYSQL');
+//   console.log(rows);
+// })
+
+// close the connection when done
+
+// connection.end((err) =>{
+//   if(err){
+//     console.error('Error closing MYSQL connection: ', err.stack);
+//     return;
+//   }
+//   console.log('Connection to mysql database closed successfully');
+// });
+
+
+// What is the purpose of the "os" module in Node.js?
+
+// A: The "os" module in Node.js provides operating system-related functionality. 
+//For example, getting information about the current user:
+
+
+
+// How can you handle authentication in Node.js?
+
+// A: Authentication in Node.js can be implemented using middleware like Passport.js. 
+//For example, implementing local authentication with Passport.js:
+
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
+
+// passport.use(new LocalStrategy(
+//   (username, password, done) => {
+     // Validate username and password
+//     if (username === 'admin' && password === 'password') {
+//       return done(null, { id: 1, username: 'admin' });
+//     } else {
+//       return done(null, false);
+//     }
+//   }
+// ));
+
+// Authenticate user
+// app.post('/login', passport.authenticate('local'), (req, res) => {
+//   res.send('Logged in successfully');
+// });
+
+
+// What is the purpose of the "http" module in Node.js?
+
+// A : The "http" module in Node.js provides functionality for creating HTTP servers and making HTTP requests.
+// For example, creating an HTTP server:
+
+// const http = require('http');
+
+// const server = http.createServer((req, res) =>{
+//   res.writeHead(200, {'Content-type': 'text/plain'});
+//   res.end('Hello, world');
+// });
+
+// server.listen(3000, ()=> {
+//   console.log('Server is running on http://localhost:3000');
+// });
 
 
