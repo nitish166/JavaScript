@@ -341,3 +341,198 @@
 // });
 
 
+
+// Rest Client - Rest client allow you to send http request and view the response in visual studio code directly
+
+
+// const express = require('express');
+// const app = express();
+
+// app.use(express.json());
+
+// const users = [{name: 'nitish'}];
+
+// app.get('/users', (req, res)=>{
+//   res.json(users);
+// });
+
+
+// app.post('/users', (req, res) => {
+//   const user = {name: req.body.name, password: req.body.password};
+//   users.push(user);
+//   res.status(201).send();
+// })
+
+// app.listen(3000, ()=>{
+//   console.log('Server is running on http://localhost:3000');
+// });
+
+// app.listen(3000);
+
+// How can you interact with the file system in Node.js?
+
+// A: Interacting with the file system in Node.js can be done using the "fs" module. For example, creating a new file:
+
+// const fs = require('fs');
+
+// fs.writeFile('example.txt', 'Hello, world', 'utf8', (err)=>{
+//   if(err) throw err;
+//   console.log('File created successfully');
+// });
+
+
+
+// What is the purpose of the "assert" module in Node.js?
+
+// A: The "assert" module in Node.js provides a way to write tests in Node.js.
+
+// const assert = require('assert');
+// assert.equal(1+1, 2);
+
+
+// How can you handle file uploads in Node.js?
+
+// A: File uploads in Node.js can be handled using middleware like multer. For example, handling file uploads using multer:
+
+// const express = require('express');
+// const multer = require('multer');
+// const upload = multer({dest: 'uploads/'});
+// const app = express();
+
+// app.post('/upload', upload.single('file'), (req, res) =>{
+//   console.log(req.file);
+//   res.send('File upload Successfully');
+// });
+
+
+// app.listen(3000, () =>{
+//   console.log('Server is running on http://localhost:3000')
+// })
+
+
+// How can you handle cookies in Node.js?
+
+// A:  Cookies in Node.js can be handled using middleware like cookie-parser. For example, using cookie-parser middleware in an Express.js application:
+
+// const express = require('express');
+// const cookieParser = require('cookie-parser');
+
+// const app = express();
+
+// app.use(cookieParser);
+// app.get('/', (req, res)=>{
+//   res.cookie('name', 'value').send('Cookie set');
+// });
+
+// app.listen(3000, ()=>{
+//   console.log('Server is running on http://localhost:3000');
+// });
+
+
+// How can you handle file downloads in Node.js?
+
+// A: File downloads in Node.js can be handled by sending a file as a response to an HTTP request.
+
+// const express = require('express');
+// const app = express();
+
+// app.get('/download', (req, res)=>{
+//   const filePath =  'path/to/file';
+//   res.download(filePath);
+// });
+
+// app.listen(3000, ()=>{
+//   console.log('Server is running on http://localhost:3000');
+// });
+
+
+
+// Problem solving in node js aka javascript for handson practice. 
+
+/** 
+1. Reverse a string in Node.js.
+2. Implement a function to check if a given string is a palindrome.
+3. Find the maximum number in an array using Node.js.
+4. Implement a function to find the factorial of a number recursively.
+5. Write a program to check if a number is prime or not.
+6. Create a function to find the nth Fibonacci number.
+7. Implement a function to sort an array of integers in ascending order.
+8  Write a program to calculate the sum of digits of a given number.
+9. Create a function to remove duplicate elements from an array.
+10. Implement a stack data structure using arrays in Node.js.
+11. Write a program to reverse a linked list.
+12. Implement a queue data structure using linked lists in Node.js.
+13. Create a function to merge two sorted arrays into a single sorted array.
+14. Write a program to find the intersection of two arrays.
+15  Implement a binary search algorithm in Node.js.
+16. Write a function to generate all permutations of a given string.
+17. Implement a function to validate an email address using regular expressions.
+18. Create a program to fetch data from a remote API using HTTP requests in Node.js.
+19. Write a function to read a file asynchronously in Node.js.
+20. Implement a basic CRUD (Create, Read, Update, Delete) API using Express.js and MongoDB.
+21. Write a program to handle file uploads in Node.js.
+22. Create a function to generate a random password of a specified length.
+23. Implement a function to validate a credit card number using Luhn's algorithm.
+24. Write a program to find the longest word in a sentence.
+25. Create a function to check if two strings are anagrams of each other.
+26. Implement a function to reverse words in a sentence.
+27. Write a program to find the first non-repeating character in a string.
+28. Create a function to calculate the area of a circle given its radius.
+29. Implement a function to convert a given string to title case.
+30. Write a program to find the largest contiguous sum in an array.
+31. Create a function to flatten a nested array.
+32. Implement a function to find the missing number in an array of integers.
+33. Write a program to remove all white spaces from a string.
+34. Create a function to generate a random array of integers within a specified range.
+35. Implement a function to rotate an array to the left by a given number of positions.
+36. Write a program to calculate the frequency of characters in a string.
+37. Create a function to check if a given year is a leap year.
+38. Implement a function to convert a decimal number to binary.
+39. Write a program to find the second largest number in an array.
+40. Create a function to calculate the factorial of a number iteratively.
+41. Implement a function to reverse the order of words in a sentence.
+42. Write a program to find the sum of all elements in an array recursively.
+43. Create a function to calculate the power of a number using recursion.
+44. Implement a function to remove all occurrences of a specified value from an array.
+45. Write a program to find the maximum depth of a nested array.
+46. Create a function to convert a given string to lowercase.
+47. Implement a function to remove all vowels from a string.
+48. Write a program to find the GCD (Greatest Common Divisor) of two numbers.
+49. Create a function to check if a given string contains only digits.
+50. Implement a function to generate all subsets of a given set.
+
+*/
+
+//1. Reverse a string in Node.js.
+
+// function reverseString(str){
+  
+//   let ans ="";
+//   for(let i = str.length-1; i>=0; i--){
+//     ans +=str[i];
+//   }
+ 
+//   return ans;
+// }
+
+// let str = "hello";
+// console.log(reverseString(str));
+
+
+//2. Implement a function to check if a given string is a palindrome.
+
+function checkPallidrome(str){
+  let rever = str.split('').reverse().join('');
+  if(rever==str){
+    return 1;
+  }
+  return 0;
+}
+
+let bool = checkPallidrome("abab");
+if(bool==1){
+  console.log("Given string is a Pallidrome");
+}else{
+  console.log("Given string is not a Pallidrome");
+}
+
